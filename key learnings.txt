@@ -2,3 +2,7 @@ Without requirements.txt,
 another developer wouldn't know which packages or versions your project needs.
 
 
+React generated different URL everytime 
+It can create CORS error 
+Solution :   allow_origin_regex="http://localhost:\d+"
+d is any port number

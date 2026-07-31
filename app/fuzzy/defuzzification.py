@@ -1,32 +1,67 @@
-RISK_VALUES = {
-    "Low": 20,
-    "Medium": 50,
-    "High": 80
-}
+import numpy as np
+
+from app.fuzzy.membership import triangular, trapezoidal
 
 
 def defuzzify(risk):
     """
-    Convert fuzzy output into a crisp risk score
-    using the weighted average method.
+    Centroid Defuzzification (Mamdani Method)
+
+    Converts aggregated fuzzy output into
+    a crisp risk score (0–100).
     """
 
-    numerator = (
-        risk["Low"] * RISK_VALUES["Low"] +
-        risk["Medium"] * RISK_VALUES["Medium"] +
-        risk["High"] * RISK_VALUES["High"]
+    universe = np.arange(0, 101, 1)
+
+    output_membership = []
+
+    for x in universe:
+
+        # Output Membership Functions
+
+        low = trapezoidal(
+            x,
+            0,
+            0,
+            20,
+            40
+        )
+
+        medium = triangular(
+            x,
+            30,
+            50,
+            70
+        )
+
+        high = trapezoidal(
+            x,
+            60,
+            80,
+            100,
+            100
+        )
+
+        # Mamdani Aggregation
+        aggregated = max(
+            min(risk["Low"], low),
+            min(risk["Medium"], medium),
+            min(risk["High"], high)
+        )
+
+        output_membership.append(aggregated)
+
+    numerator = sum(
+        x * mu
+        for x, mu in zip(universe, output_membership)
     )
 
-    denominator = (
-        risk["Low"] +
-        risk["Medium"] +
-        risk["High"]
-    )
+    denominator = sum(output_membership)
 
     if denominator == 0:
         return 0
 
-    return numerator / denominator
+    return round(numerator / denominator, 2)
 
 
 def risk_category(score):
@@ -37,5 +72,4 @@ def risk_category(score):
     elif score < 65:
         return "Medium"
 
-    else:
-        return "High"
+    return "High"
