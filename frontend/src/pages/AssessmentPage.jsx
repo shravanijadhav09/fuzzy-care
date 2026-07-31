@@ -5,7 +5,6 @@ import PatientForm from "../components/PatientForm";
 import ResultCard from "../components/ResultCard";
 
 
-
 function AssessmentPage() {
 
 
@@ -26,7 +25,7 @@ function AssessmentPage() {
 
   const [error, setError] = useState("");
 
-   
+
 
   const handleChange = (e) => {
 
@@ -37,6 +36,26 @@ function AssessmentPage() {
       [e.target.name]: e.target.value,
 
     });
+
+  };
+
+
+
+  const handleReset = () => {
+
+    setPatient({
+
+      heart_rate: "",
+      blood_pressure: "",
+      spo2: "",
+      temperature: "",
+      respiratory_rate: "",
+
+    });
+
+    setResult(null);
+
+    setError("");
 
   };
 
@@ -122,8 +141,6 @@ function AssessmentPage() {
 
 
 
-      {/* Header */}
-
       <div className="bg-white shadow-sm py-6">
 
 
@@ -174,10 +191,11 @@ function AssessmentPage() {
 
           handleSubmit={handleSubmit}
 
+          handleReset={handleReset}
+
           loading={loading}
 
         />
-
 
 
 
@@ -202,10 +220,6 @@ function AssessmentPage() {
 
         />
 
-
-
-
-      
 
 
       </div>

@@ -5,6 +5,7 @@ function PatientForm({
   patient,
   handleChange,
   handleSubmit,
+  handleReset,
   loading
 }) {
 
@@ -65,24 +66,42 @@ function PatientForm({
 
 
 
-      <button
-        onClick={handleSubmit}
+      <div className="flex gap-4 mt-10">
+
+  <button
+    onClick={handleSubmit}
+    className="
+      flex-1
+      bg-blue-600
+      text-white
+      py-3
+      rounded-xl
+      font-semibold
+      hover:bg-blue-700
+      transition
+    "
+  >
+    {loading ? "Analyzing..." : "Calculate Risk"}
+  </button>
+
+
+    <button
+        onClick={handleReset}
         className="
-        mt-10
-        w-full
-        bg-blue-600
-        text-white
+        flex-1
+        bg-slate-200
+        text-slate-700
         py-3
         rounded-xl
         font-semibold
-        hover:bg-blue-700
+        hover:bg-slate-300
         transition
         "
-      >
+    >
+        Clear
+    </button>
 
-        {loading ? "Analyzing..." : "Calculate Risk"}
-
-      </button>
+    </div>
 
 
     </div>
