@@ -11,6 +11,9 @@ from app.fuzzy.defuzzification import (
     defuzzify,
     risk_category
 )
+from app.fuzzy.explanation import generate_reasons
+
+from app.fuzzy.suggestions import generate_suggestions
 
 
 def calculate_risk(patient):
@@ -22,6 +25,15 @@ def calculate_risk(patient):
     temp = temperature_membership(patient.temperature)
     rr = respiratory_rate_membership(patient.respiratory_rate)
 
+    # Generate Reasons
+    reasons = generate_reasons(
+        hr,
+        bp,
+        spo2,
+        temp,
+        rr
+    )
+
     # Step 2: Inference
     risk = infer(hr, bp, spo2, temp, rr)
 
@@ -31,6 +43,9 @@ def calculate_risk(patient):
     # Step 4: Risk Category
     category = risk_category(score)
 
+    suggestions = generate_suggestions(category)
+
+    
     return {
         "input": {
             "heart_rate": patient.heart_rate,
@@ -41,5 +56,9 @@ def calculate_risk(patient):
         },
         "fuzzy_output": risk,
         "risk_score": round(score, 2),
-        "risk_category": category
+        "risk_category": category,
+        "reasons": reasons,
+        "suggestions": suggestions
     }
+
+
