@@ -45,21 +45,8 @@ function Hero() {
 
             </p>
 
-            <input
-              type="text"
-              placeholder="Enter Your Name (Optional)"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="mt-8 w-full md:w-96 p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
 
-            <button
-              onClick={handleStart}
-              className="block mt-6 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition"
-            >
-              Begin Assessment
-            </button>
-
+            
           </div>
 
           {/* Right */}

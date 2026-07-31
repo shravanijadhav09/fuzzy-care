@@ -3,7 +3,7 @@ import { FaHeartbeat } from "react-icons/fa";
 
 import PatientForm from "../components/PatientForm";
 import ResultCard from "../components/ResultCard";
-import HistoryCard from "../components/HistoryCard";
+
 
 
 function AssessmentPage() {
@@ -26,7 +26,7 @@ function AssessmentPage() {
 
   const [error, setError] = useState("");
 
-
+   
 
   const handleChange = (e) => {
 
@@ -205,8 +205,7 @@ function AssessmentPage() {
 
 
 
-        <HistoryCard />
-
+      
 
 
       </div>

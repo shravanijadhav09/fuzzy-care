@@ -1,14 +1,15 @@
 from app.fuzzy.membership import triangular, trapezoidal
 
 def heart_rate_membership(hr):
-    low = triangular(hr, 40, 60, 80)
-    normal = triangular(hr, 60, 80, 100)
-    high = trapezoidal(hr, 90, 110, 130, 140)
+    
+    low = triangular(hr,40,60,80)
+    normal = triangular(hr,60,80,100)
+    high = trapezoidal(hr,90,110,140,180)
 
     return {
-        "Low": low,
-        "Normal": normal,
-        "High": high
+        "Low":low,
+        "Normal":normal,
+        "High":high
     }
 
 def blood_pressure_membership(bp):
@@ -23,12 +24,13 @@ def blood_pressure_membership(bp):
     }
 
 def spo2_membership(spo2):
-    low = triangular(spo2, 80, 90, 95)
-    normal = trapezoidal(spo2, 94, 96, 100, 100)
+    
+    low = trapezoidal(spo2,60,70,90,95)
+    normal = trapezoidal(spo2,94,96,100,100)
 
     return {
-        "Low": low,
-        "Normal": normal
+        "Low":low,
+        "Normal":normal
     }
 
 def temperature_membership(temp):
@@ -43,14 +45,15 @@ def temperature_membership(temp):
     }
 
 def respiratory_rate_membership(rr):
-    low = triangular(rr, 8, 12, 16)
-    normal = triangular(rr, 12, 16, 20)
-    high = trapezoidal(rr, 18, 22, 30, 35)
+    
+    low = triangular(rr,8,12,16)
+    normal = triangular(rr,12,16,20)
+    high = trapezoidal(rr,18,22,40,80)
 
     return {
-        "Low": low,
-        "Normal": normal,
-        "High": high
+        "Low":low,
+        "Normal":normal,
+        "High":high
     }
 
 if __name__ == "__main__":
