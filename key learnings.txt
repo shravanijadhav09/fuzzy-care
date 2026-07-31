@@ -1,0 +1,4 @@
+Without requirements.txt, 
+another developer wouldn't know which packages or versions your project needs.
+
+
