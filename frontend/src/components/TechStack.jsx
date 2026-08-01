@@ -38,7 +38,7 @@ const technologies = [
   },
   {
     icon: <FaDatabase size={35} />,
-    name: "Mamdani Fuzzy Logic",
+    name: "Fuzzy Logic",
     description: "Rule-based risk evaluation engine",
   },
 
@@ -61,7 +61,7 @@ function TechStack() {
           </h2>
 
           <p className="mt-3 text-gray-600">
-            Built using modern technologies for an explainable AI-based healthcare system.
+            Built using modern technologies for an explainable healthcare system.
           </p>
 
         </div>

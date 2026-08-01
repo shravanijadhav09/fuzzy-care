@@ -11,7 +11,7 @@ const features = [
     icon: <FaBrain size={32} />,
     title: "Fuzzy Logic Based",
     description:
-      "Uses Mamdani fuzzy inference to analyze patient risk instead of rigid threshold-based decisions.",
+      "Uses fuzzy inference to analyze patient risk instead of rigid threshold-based decisions.",
   },
   {
     icon: <FaHeartbeat size={32} />,

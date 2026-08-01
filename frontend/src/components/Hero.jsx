@@ -41,7 +41,7 @@ function Hero() {
 
               Assess patient health risk using
               vital signs through explainable
-              Mamdani fuzzy inference.
+              fuzzy inference.
 
             </p>
 
