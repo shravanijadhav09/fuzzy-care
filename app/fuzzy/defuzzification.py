@@ -36,8 +36,8 @@ def defuzzify(risk):
 
         high = trapezoidal(
             x,
-            70,
-            85,
+            60,
+            75,
             100,
             100
         )
@@ -69,7 +69,7 @@ def risk_category(score):
     if score < 40:
         return "Low"
 
-    elif score < 75:
+    elif score < 65:
         return "Medium"
 
     return "High"
