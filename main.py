@@ -20,4 +20,12 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+def home():
+    return {
+        "message": "FuzzyCare API is running 🚀"
+    }
+
+
+
 app.include_router(router)
