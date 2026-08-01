@@ -115,21 +115,21 @@ The generated score is classified into:
 > Add your screenshots here.
 
 * Landing Page
-![Landing Page](assets/screenshots/landing-page.png)
+![Landing Page](assets/landing-page.png)
 
 * Patient Assessment Page
-![Assessment Form](assets/screenshots/assessment-form.png)
+![Assessment Form](assets/assessment-form.png)
 
 * Low Risk Result
-![Low Risk](assets/screenshots/low-risk-para.png)
+![Low Risk](assets/low-risk-para.png)
 
-![Low Risk](assets/screenshots/low-risk.png)
+![Low Risk](assetslow-risk.png)
 
 * Medium Risk Result
-![Medium Risk](assets/screenshots/medium-risk.png)
+![Medium Risk](assets/medium-risk.png)
 
 * High Risk Result
-![High Risk](assets/screenshots/high-risk.png)
+![High Risk](assets/high-risk.png)
 ---
 
 # 🛠️ Tech Stack
