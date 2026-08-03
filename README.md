@@ -183,7 +183,7 @@ fuzzy-care/
 ### Clone the repository
 
 ```bash
-[git clone https://github.com/your-username/fuzzy-care.git](https://github.com/shravanijadhav09/fuzzy-care.git)
+https://github.com/shravanijadhav09/fuzzy-care.git
 ```
 
 ### Frontend
